@@ -46,9 +46,9 @@ function TopNav() {
     </div>
     </div>
 
-     <div className="text-[#000000]  w-full flex items-end bg-[red] p-[40px]">
-          <div className="text-[#000000] h-[60vh] w-full flex items-end justify-between  bg-[blue] ">
-            <div className=' w-full bg-[green] min-h-[288px] flex items-end justify-between '>
+     <div className="text-[#000000]  w-full flex items-end p-[40px]">
+          <div className="text-[#000000] h-[60vh] w-full flex items-end justify-between">
+            <div className=' w-full min-h-[288px] flex items-end justify-between '>
        <motion.div
         initial={{ y: 2, opacity: 0 }}  
         animate={{ y: 0, opacity: 1 }}   
