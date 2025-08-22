@@ -15,7 +15,7 @@ function TopNav() {
     <div>
        <div className="bg-[#000000] text-[#FFFFFF] h-[46px] w-full">
        <motion.span
-        initial={{ y: 50, opacity: 0 }}  
+        initial={{ y: 40, opacity: 0 }}  
         animate={{ y: 0, opacity: 1 }}   
         transition={{ duration: 0.8, ease: "easeOut" }} 
         className={`flex justify-center items-center h-full text-[16px] font-normal ${interTight.className}`}
@@ -28,7 +28,7 @@ function TopNav() {
      <div className="text-[#000000] h-[84px] w-full flex justify-center items-center">
           <div className="text-[#000000] h-[44.7px] w-full pl-[40px] pr-[40px] flex items-center justify-between  ">
        <motion.span
-        initial={{ y: 50, opacity: 0 }}  
+        initial={{ y: 40, opacity: 0 }}  
         animate={{ y: 0, opacity: 1 }}   
         transition={{ duration: 0.8, ease: "easeOut" }} 
         className={` text-[16px] font-normal ${interTight.className}`}
@@ -36,7 +36,7 @@ function TopNav() {
         <Image src="https://cdn.prod.website-files.com/681dfdff4444ca819f7050a2/68227dfdc407523fbe5b56e7_post-labs-logo.svg" loading='lazy' alt='logo' width={150} height={21} />
       </motion.span>
        <motion.div
-        initial={{ y: 50, opacity: 0 }}  
+        initial={{ y: 40, opacity: 0 }}  
         animate={{ y: 0, opacity: 1 }}   
         transition={{ duration: 0.8, ease: "easeOut" }} 
         className={`w-[395px] text-[16px] font-normal ${interTight.className}`}
@@ -46,32 +46,6 @@ function TopNav() {
     </div>
     </div>
 
-     <div className="text-[#000000]  w-full flex items-end p-[40px]">
-          <div className="text-[#000000] h-[60vh] w-full flex items-end justify-between">
-            <div className=' w-full min-h-[288px] flex items-end justify-between '>
-       <motion.div
-        initial={{ y: 2, opacity: 0 }}  
-        animate={{ y: 0, opacity: 1 }}   
-        transition={{ duration: 0.8, ease: "easeOut" }} 
-        className={`max-w-[1097px] leading-none flex items-end text-[144px] font-normal ${interTight.className}`}
-      >
-       The Future of News Starts Here
-      </motion.div>
-     <motion.div
-  animate={{ y: [0, -15, 0] }}
-  transition={{
-    duration: 3, 
-    repeat: Infinity, 
-    ease: "easeOut",
-  }}
->
-          <Image src="https://cdn.prod.website-files.com/681dfdff4444ca819f7050a2/68238111591ea94a69065212_Vector.svg" loading='lazy' alt='arrow' width={166} height={167}
-           className="w-[380px] h-[171px] object-contain" />
-   
-      </motion.div>
-      </div>
-    </div>
-    </div>
 
     </div>
   )
