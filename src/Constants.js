@@ -1,0 +1,5 @@
+export const aboutText="Post Labs is rethinking how digital media works for Canadians. Our mission is simple: make journalism profitable, sustainable, and trusted – built for Canadians, by Canadians."
+export const build="What We’re Building"
+export const media="Post Labs is building a homegrown platform designed for Canadians and the future of Canadian media."
+export const post="At its core is PostOS, our made-in-Canada publishing engine that connects local voices, communities, and trusted journalism in one seamless digital experience."
+export const home="Built by Canadians, for Canadians, PostOS is more than just technology — it’s a way to bring our stories home."

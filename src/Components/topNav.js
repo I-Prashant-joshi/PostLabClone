@@ -1,6 +1,7 @@
 "use client"
 import React from 'react'
 import { Inter_Tight } from "next/font/google";
+import useLenis from "@/Common/useLenisHook";
 
 import  {motion}  from "framer-motion";
 import Image from 'next/image';
@@ -11,8 +12,10 @@ const interTight = Inter_Tight({
 });
 
 function TopNav() {
+  useLenis()
+
   return (
-    <div>
+    <div className='border-b-[1px] border-b-[rgb(223,223,217)] z-0'>
        <div className="bg-[#000000] text-[#FFFFFF] h-[46px] w-full">
        <motion.span
         initial={{ y: 40, opacity: 0 }}  
@@ -25,8 +28,8 @@ function TopNav() {
     </div>
 
 
-     <div className="text-[#000000] h-[84px] w-full flex justify-center items-center">
-          <div className="text-[#000000] h-[44.7px] w-full pl-[40px] pr-[40px] flex items-center justify-between  ">
+     <div className="text-[#000000] h-[84px] w-full flex justify-center items-center bg-transparent">
+          <div className="text-[#000000] h-[44.7px] w-full pl-[40px] pr-[40px] flex items-center justify-between bg-transparent ">
        <motion.span
         initial={{ y: 40, opacity: 0 }}  
         animate={{ y: 0, opacity: 1 }}   

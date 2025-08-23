@@ -42,8 +42,8 @@ export default function CardDeck() {
 
   return (
     
-        <div className="h-screen bg-[#F8F8F2] flex justify-center p-[40px] box-border">
-      <div className="w-full min-h-[300px] max-h-[555px] flex  justify-center gap-10">
+        <div className="flex justify-center p-[40px] box-border z-0 bg-transparent">
+      <div className="pt-5 w-full h-[50vh] md:h-[40vh] sm:h-[40vh] lg:h-[40vh] xl:h-[60vh] flex justify-center gap-10 z-0 overflow-y-visible overflow-x-scroll no-scrollbar ">
         {/* Left Card */}
         <motion.div
           className="flex-1 min-h-[350px] bg-black rounded-[40px] flex flex-col justify-between text-yellow-300 text-4xl font-bold shadow-xl p-[40px]"

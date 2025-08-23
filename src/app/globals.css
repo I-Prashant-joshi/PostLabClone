@@ -31,3 +31,39 @@ body {
   );
   
 }
+
+/* Chrome, Safari, Edge */
+.no-scrollbar::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+/* Firefox */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+/* IE, Edge Legacy */
+.no-scrollbar {
+  -ms-overflow-style: none;
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
