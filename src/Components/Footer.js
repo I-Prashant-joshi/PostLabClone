@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
 import { FiArrowDownRight } from "react-icons/fi";
+import "../app/globals.css";
+
 export default function Footer() {
   return (
     <footer className="fixed bottom-0 left-0 h-[80vh] w-full bg-black text-white  z-0">
@@ -17,7 +19,6 @@ export default function Footer() {
               <div className="marquee-arrow w-embed">
                 <FiArrowDownRight />
               </div>
-              
               <div className="marquee-text flex">
                 Ready to Build the Future of Canadian Media?
                 <a href="/contact-us" className="marquee-contact">
@@ -33,11 +34,11 @@ export default function Footer() {
       </div>
 
       {/* Right section  */}
-<div className="flex justify-between pt-[150px] ">
+<div className="flex justify-between pt-[150px] flex-col md:flex-row">
     <div className="h-full flex-1 ml-[40px]">
             <Image src="https://cdn.prod.website-files.com/681dfdff4444ca819f7050a2/682786273e6c31f3343c6700_postlabs-logo-white.svg" loading='lazy' alt='logo' width={169} height={21} />
     </div>
-      <div className="flex flex-1 flex-col gap-10">
+      <div className="flex flex-1 flex-col gap-10 pl-[40px] md:pl-[0px]">
 
         <div className="flex flex-col gap-0 mt-4">
           <a

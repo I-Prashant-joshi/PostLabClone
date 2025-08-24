@@ -95,7 +95,7 @@ html.lenis, html.lenis body {
 .marquee {
   display: inline-flex;       
   white-space: nowrap;
-  animation: marquee 1s linear infinite;
+  animation: marquee 8s linear infinite;
 }
 
 .marquee a {

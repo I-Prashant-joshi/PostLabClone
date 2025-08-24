@@ -10,15 +10,15 @@ function BuildingSection() {
     {
       text: media,
       icon: "https://cdn.prod.website-files.com/681dfdff4444ca819f7050a2/68266ea52e91d548861b8d20_icon-1-transparent.svg",
-      wrapperWidth: "w-[60%]",
-      justify: "justify-center",
+      wrapperWidth: "w-full md:w-[60%]",
+      justify: "justify-start lg:justify-center",
       textClass: "leading-tight",
       hasBorder: true,
     },
     {
       text: post,
       icon: "https://cdn.prod.website-files.com/681dfdff4444ca819f7050a2/68267094af8c90b6a17e323a_icon-2-transparent.svg",
-      wrapperWidth: "w-[50%]",
+       wrapperWidth: "w-full md:w-[50%]",
       justify: "justify-end",
       textClass: "leading-tight",
       hasBorder: false,
@@ -26,7 +26,7 @@ function BuildingSection() {
     {
       text: home,
       icon: "https://cdn.prod.website-files.com/681dfdff4444ca819f7050a2/68267087adfa3ad7422b8753_icon-3-transparent.svg",
-      wrapperWidth: "w-[60%]",
+      wrapperWidth: "w-full md:w-[60%]",
       justify: "justify-center",
       textClass: "",
       hasBorder: false,
@@ -37,7 +37,7 @@ function BuildingSection() {
       heading:"For Investors",
       text: invest,
       id:investID,
-      wrapperWidth: "w-[50%]",
+      wrapperWidth: "w-full lg:w-[50%]",
       justify: "justify-start",
       textClass: "leading-tight  pl-[40px]",
       hasBorder: false,
@@ -46,9 +46,9 @@ function BuildingSection() {
       heading:"For Builders",
       text: builders,
       id: buidId,
-      wrapperWidth: "w-[50%]",
+      wrapperWidth: "w-full lg:w-[50%] pb-[50px]",
       justify: "justify-end",
-      textClass: "leading-tight",
+      textClass: "leading-tight pl-[40px] lg:pl-[10px]",
       hasBorder: true,
     },
  
@@ -68,7 +68,7 @@ function BuildingSection() {
       {sections.map((section, i) => (
         <div
           key={i}
-          className={`relative flex pt-[220px] pb-[100px] w-full items-center box-border 
+          className={`relative flex pb-[50px] pt-[150px] md:pt-[220px] md:pb-[100px]  w-full items-center box-border 
             ${section.justify} ${section.hasBorder ? "border-t border-t-[rgba(223,223,217,0.77)]" : ""}`}
         >
           <div className={`flex w-full ${section.justify}`}>
@@ -77,7 +77,7 @@ function BuildingSection() {
                 <Image
                   src={section.icon}
                   loading="lazy"
-                  alt="icon"
+                  alt="icon"  
                   width={147}
                   height={149}
                   className="absolute z-0 top-[-30px] left-[-73px]"
@@ -85,7 +85,7 @@ function BuildingSection() {
                 <AnimatedText
                   text={section.text}
                   wordSpacing="mr-2"
-                  className={`text-[12px] md:text-[36px] z-10 pl-1 ${section.textClass}`}
+                  className={`text-[25px] md:text-[30px] z-10 pl-1 ${section.textClass}`}
                 />
               </div>
             </div>
@@ -104,18 +104,18 @@ function BuildingSection() {
               <div className=" relative flex flex-col gap-4">
                 <AnimatedText
                   text={section.heading}
-                  wordSpacing="mr-2"
-                  className={`text-[12px] max-w-[700px]  md:text-[116px] z-10 pl-1 ${section.textClass}`}
+                  wordSpacing="mr-8 "
+                  className={`text-[50px] max-w-[750px] md:text-[80px]  lg:text-[116px] z-10 pl-1 ${section.textClass}`}
                 />
                  <AnimatedText
                   text={section.text}
                   wordSpacing="mr-2"
-                  className={`text-[6px] max-w-[660px]  md:text-[16px] z-10 pl-1 ${section.textClass}`}
+                  className={`text-[16px] md:max-w-[660px]  md:text-[16px] z-10 pl-1 ${section.textClass}`}
                 />
                  <AnimatedText
                   text={section.id  }
                   wordSpacing="mr-2"
-                  className={`text-[8px] md:text-[26px] z-10 pl-1 ${section.textClass}`}
+                  className={`text-[16px] md:text-[26px] z-10 pl-1 ${section.textClass}`}
                 />
 
               </div>
