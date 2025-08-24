@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 const cardBaseClasses =
-  "flex-1 h-[300px] sm:min-h-[385px] lg:h-[555px] bg-black rounded-[40px] flex flex-col justify-between shadow-xl p-[40px]";
+  "flex-1 h-[300px] sm:min-h-[385px] lg:h-[555px] bg-black rounded-[20px] md:rounded-[40px] flex flex-col justify-between shadow-xl p-[30px]";
 
 function Card({ icon, text, animate, initial, className = "" }) {
   // Use motion.div only if animate is provided
@@ -12,7 +12,7 @@ function Card({ icon, text, animate, initial, className = "" }) {
 
   return (
     <Tag className={`${ cardBaseClasses} ${className}`} initial={initial} animate={animate}>
-      <Image src={icon} height={74} width={74} alt={text} />
+      <Image src={icon} height={74} width={74} className="w-[42px] lg:w-[72px]" alt={text} />
       <div className="w-full max-w-[331px] text-[25px] sm:text-[36px] text-white">{text}</div>
     </Tag>
   );
@@ -82,7 +82,7 @@ export default function CardDeck() {
   return (
     <div className="flex justify-center p-10 bg-transparent">
       <div
-        className={`pt-5 w-full  flex gap-10 overflow-x-scroll no-scrollbar ${
+        className={`pt-5 w-full  flex gap-5 sm:gap-10 overflow-x-scroll no-scrollbar ${
           isSmallScreen ? "flex-row" : "justify-center"
         }`}
       >

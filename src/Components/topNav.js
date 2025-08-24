@@ -18,7 +18,7 @@ function TopNav() {
       {/* Top black bar */}
       <div className="bg-black text-white h-[46px] w-full">
         <motion.span
-          initial={{ y: 40, opacity: 0 }}
+          initial={{ y: 10, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className={`flex justify-center items-center h-full text-[14px] sm:text-[16px] font-normal px-2 text-center ${interTight.className}`}
@@ -33,7 +33,7 @@ function TopNav() {
           
           {/* Logo */}
           <motion.span
-            initial={{ y: 40, opacity: 0 }}
+            initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className={`text-[16px] w-full font-normal ${interTight.className}`}
@@ -50,7 +50,7 @@ function TopNav() {
 
           {/* Tagline */}
           <motion.div
-            initial={{ y: 40, opacity: 0 }}
+            initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className={` text-[14px] sm:text-[14px] md:text-[16px]  font-normal max-w-[395px] box-border pl-[40px]  sm:pl-[0px] leading-tight ${interTight.className}`}
