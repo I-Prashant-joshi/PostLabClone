@@ -4,6 +4,7 @@ import ScrollFadeText from "../Common/ScrollFadeText";
 import { aboutText } from "../../src/Constants.js";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
+
 function AboutSection() {
   const { scrollY } = useScroll();
 
@@ -19,9 +20,8 @@ function AboutSection() {
 
 
   return (
-    <div>
-      {/* Text Section */}
-      <div className="w-full flex justify-center items-center pt-[400px] pb-[150px] box-border">
+    <div className=" relative z-40 bg-transparent">
+      <div className="w-full flex justify-center items-center pt-[400px] pb-[150px] box-border z-50">
         <div className="flex justify-center items-center w-full p-[40px]">
           <div className="w-[554px] h-full text-[52px] flex justify-center items-center leading-tight">
             <ScrollFadeText text={aboutText} className="flex flex-wrap justify-center text-center " />

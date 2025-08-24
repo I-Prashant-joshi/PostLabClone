@@ -25,7 +25,7 @@ function Header() {
   };
 
   return (
-    <div onMouseMove={handleMouseMove} className="relative w-full flex flex-col">
+    <div onMouseMove={handleMouseMove} className="relative w-full flex flex-col z-20 ">
       <motion.div
         style={{
           opacity, 
