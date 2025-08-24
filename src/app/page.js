@@ -17,7 +17,12 @@ export default function Home() {
     <div className="relative">
       {/* Main content */}
       <div
-        className="relative z-20 bg-[linear-gradient(to_right,transparent_0,transparent_20%,rgb(223,223,217)_20%,rgb(223,223,217)_calc(20%+1px),transparent_calc(20%+1px),transparent_50%,rgb(223,223,217)_50%,rgb(223,223,217)_calc(50%+1px),transparent_calc(50%+1px),transparent_80%,rgb(223,223,217)_80%,rgb(223,223,217)_calc(80%+1px),transparent_calc(80%+1px),transparent_100%)] bg-[#f8f8f2]"
+        className="relative z-20
+        bg-[linear-gradient(to_right,transparent_0,transparent_10%,rgb(223,223,217)_10%,rgb(223,223,217)_calc(10%+1px),transparent_calc(10%+1px),transparent_44.2%,rgb(223,223,217)_45%,rgb(223,223,217)_calc(35%+1px),transparent_calc(35%+1px),transparent_90%,rgb(223,223,217)_91%,rgb(223,223,217)_calc(25%+1px),transparent_calc(20%+1px),transparent_20%)]
+        
+        sm:bg-[linear-gradient(to_right,transparent_0,transparent_20%,rgb(223,223,217)_20%,rgb(223,223,217)_calc(20%+1px),transparent_calc(20%+1px),transparent_50%,rgb(223,223,217)_50%,rgb(223,223,217)_calc(50%+1px),transparent_calc(50%+1px),transparent_80%,rgb(223,223,217)_80%,rgb(223,223,217)_calc(80%+1px),transparent_calc(80%+1px),transparent_100%)]
+        
+        bg-[#f8f8f2]"
       >
         <Header />
         <AboutSection />

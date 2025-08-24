@@ -50,7 +50,7 @@ const video3Opacity = useTransform(scrollYProgress, [0.5, 0.6], [0, 5]);
         </motion.video>
 
         {/* Text overlay */}
-        <div className="absolute inset-0 flex items-center pl-10 text-6xl font-bold text-white">
+        <div className="absolute inset-0 flex items-center pl-10 text-4xl md:text-6xl  text-white">
           <span className="text-gray-200">Built for&nbsp;</span>
 
           {/* Text block */}
