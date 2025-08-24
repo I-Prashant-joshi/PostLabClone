@@ -75,9 +75,9 @@ html.lenis, html.lenis body {
   right: 0;
   height: 60%;
   background:
-    radial-gradient(ellipse 70% 90% at bottom left, rgba(255, 242, 0, 0.6), transparent 40%),
-    radial-gradient(ellipse 70% 90% at bottom right, rgba(255, 242, 0, 0.6), transparent 40%),
-    linear-gradient(to top, rgba(255, 242, 0, 0.5) 0%, transparent 20%);
+    radial-gradient(ellipse 90% 150% at bottom left, rgba(255, 242, 0, 0.6), transparent 40%),
+    radial-gradient(ellipse 70% 150% at bottom right, rgba(255, 242, 0, 0.6), transparent 40%),
+    linear-gradient(to top, rgba(255, 242, 0, 0.5) 0%, transparent 70%);
   background-blend-mode: screen;
   pointer-events: none;
   z-index: 0;

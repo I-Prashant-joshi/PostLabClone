@@ -2,7 +2,6 @@ import AboutSection from "@/Components/AboutSection";
 import BuildingSection from "@/Components/BuildingSection";
 import Footer from "@/Components/Footer";
 import Header from "@/Components/Header";
-// import TopNav from "@/Components/topNav";
 
 export default function Home() {
   return (
@@ -12,7 +11,6 @@ export default function Home() {
         <Header />
         <AboutSection />
         <BuildingSection />
-
       </div>
         <div className="h-[80vh]"></div>
 

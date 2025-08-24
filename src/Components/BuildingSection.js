@@ -4,6 +4,7 @@ import Image from "next/image";
 import "../app/globals.css";
 import AnimatedText from "@/Common/AnimateText";
 import { buidId, build, builders, home, invest, investID, media, post } from "@/Constants";
+import HeroScroll from "./VideoSection";
 
 function BuildingSection() {
   const sections = [
@@ -26,7 +27,7 @@ function BuildingSection() {
     {
       text: home,
       icon: "https://cdn.prod.website-files.com/681dfdff4444ca819f7050a2/68267087adfa3ad7422b8753_icon-3-transparent.svg",
-      wrapperWidth: "w-full md:w-[60%]",
+      wrapperWidth: "w-full md:w-[60%] mb-[50px] sm:mb-[100px]",
       justify: "justify-center",
       textClass: "",
       hasBorder: false,
@@ -56,7 +57,8 @@ function BuildingSection() {
   ];
 
   return (
-    <div className="w-full bg-fade-bottom">
+    <>
+    <div className="w-full ">
    
       <div className="pl-[40px] pt-[100px] pb-[100px] w-[80%] lg:w-[60%] leading-tight md:leading-[150px]">
         <AnimatedText
@@ -93,10 +95,14 @@ function BuildingSection() {
         </div>
       ))}
 
+    </div>
+        <HeroScroll />
+
+<div className="w-full bg-fade-bottom">
       {sections2.map((section, i) => (
         <div
           key={i}
-          className={`relative flex pt-[220px] pb-[100px] w-full items-center box-border 
+          className={`relative flex pt-[120px] pb-[100px] w-full items-center box-border 
             ${section.justify} ${section.hasBorder ? "border-t border-t-[rgba(223,223,217,0.77)]" : ""}`}
         >
           <div className={`flex w-full ${section.justify}`}>
@@ -104,7 +110,7 @@ function BuildingSection() {
               <div className=" relative flex flex-col gap-4">
                 <AnimatedText
                   text={section.heading}
-                  wordSpacing="mr-8 "
+                  wordSpacing="mr-4 md:mr-8 "
                   className={`text-[50px] max-w-[750px] md:text-[80px]  lg:text-[116px] z-10 pl-1 ${section.textClass}`}
                 />
                  <AnimatedText
@@ -137,8 +143,9 @@ function BuildingSection() {
           className="bg-transparent border-b border-white focus:outline-none text-center"
         />
       </div>
+      </div>
     </div>
-    </div>
+</>
   );
 }
 
