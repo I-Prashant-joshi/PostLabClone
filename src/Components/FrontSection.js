@@ -13,14 +13,14 @@ const sentence = "The Future of News Starts Here";
 
 export default function FrontSection() {
   return (
-    <div className="w-full flex items-end p-10 text-black z-0 ">
+    <div className="w-full flex items-end p-5 sm:p-10 text-black z-0 ">
       <div className="w-full min-h-[40vh] md:min-h-[50vh] flex items-end  justify-start md:justify-between z-0 flex-wrap sm:flex-wrap 
       md:flex-nowrap mt-[50px] sm:mt-[0px] ">
         
         <AnimatedText
           text={sentence}
           wordSpacing="mr-2 sm:mr-8"
-          className={`flex flex-wrap max-w-[1200px] text-[60px] sm:text-[60px] h-full md:text-[100px] lg:text-[144px] font-normal leading-[1] pt-[100px] mt-[0] ${interTight.className}`}
+          className={`flex flex-wrap max-w-[1200px] text-[60px] sm:text-[60px] h-full md:text-[100px] lg:text-[144px] font-normal leading-[0.9] pt-[100px] mt-[0] ${interTight.className}`}
         />
 
         <motion.div
