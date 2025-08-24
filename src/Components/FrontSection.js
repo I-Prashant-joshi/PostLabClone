@@ -15,7 +15,7 @@ export default function FrontSection() {
   return (
     <div className="w-full flex items-end p-5 sm:p-10 text-black z-0 ">
       <div className="w-full min-h-[40vh] md:min-h-[50vh] flex items-end  justify-start md:justify-between z-0 flex-wrap sm:flex-wrap 
-      md:flex-nowrap mt-[100px] sm:mt-[0px] ">
+      md:flex-nowrap mt-[150px] sm:mt-[0px] ">
         
         <AnimatedText
           text={sentence}
