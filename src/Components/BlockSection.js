@@ -80,7 +80,7 @@ export default function CardDeck() {
   ];
 
   return (
-    <div className="flex justify-center p-10 bg-transparent">
+    <div className="flex justify-center p-1 md:p-10 bg-transparent">
       <div
         className={`pt-5 w-full  flex gap-5 sm:gap-10 overflow-x-scroll no-scrollbar ${
           isSmallScreen ? "flex-row" : "justify-center"
