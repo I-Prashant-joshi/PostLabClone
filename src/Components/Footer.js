@@ -38,7 +38,7 @@ export default function Footer() {
     <div className="h-full flex-1 ml-[40px]">
             <Image src="https://cdn.prod.website-files.com/681dfdff4444ca819f7050a2/682786273e6c31f3343c6700_postlabs-logo-white.svg" loading='lazy' alt='logo' width={169} height={21} />
     </div>
-      <div className="flex flex-1 flex-col gap-10 pl-[40px] md:pl-[0px]">
+      <div className="flex flex-1 flex-col gap-10 pl-[20px] md:pl-[0px]">
 
         <div className="flex flex-col gap-0 mt-4">
           <a
