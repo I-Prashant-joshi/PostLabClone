@@ -1,25 +1,33 @@
+// eslint.config.mjs
 import { dirname } from "path";
 import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
-const eslintConfig = [
-  ...compat.extends("next/core-web-vitals"),
+export default [
+  // Lint JS and JSX files
   {
-    ignores: [
-      "node_modules/**",
-      ".next/**",
-      "out/**",
-      "build/**",
-      "next-env.d.ts",
-    ],
+    files: ["**/*.js", "**/*.jsx"],
+    languageOptions: {
+      ecmaVersion: 2020,
+      sourceType: "module",
+    },
+    // Ignore build and dependency folders
+    ignores: ["node_modules/**", ".next/**", "out/**", "build/**"],
+    rules: {
+      // Recommended rules for JS projects
+      "no-unused-vars": "warn",
+      "no-console": "warn",
+      "react/react-in-jsx-scope": "off", // Next.js doesn't require React import
+      "react/prop-types": "off", // optional if not using prop-types
+    },
+  },
+  // Optional: Lint JSON, MD, or other file types
+  {
+    files: ["**/*.json", "**/*.md"],
+    languageOptions: {
+      parser: "jsonc-eslint-parser",
+    },
   },
 ];
-
-export default eslintConfig;
