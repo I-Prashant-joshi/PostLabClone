@@ -34,7 +34,7 @@ export default function Footer() {
       </div>
 
       {/* Right section  */}
-<div className="flex justify-between pt-[150px] flex-col md:flex-row">
+<div className="flex justify-between pt-[100px] md:pt-[150px] flex-col md:flex-row">
     <div className="h-full flex-1 ml-[40px]">
             <Image src="https://cdn.prod.website-files.com/681dfdff4444ca819f7050a2/682786273e6c31f3343c6700_postlabs-logo-white.svg" loading='lazy' alt='logo' width={169} height={21} />
     </div>
