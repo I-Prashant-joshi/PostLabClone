@@ -7,15 +7,12 @@ import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 function AboutSection() {
   const videoRef = useRef(null);
 
-  // Track scroll progress relative to the video section
   const { scrollYProgress } = useScroll({
     target: videoRef,
     offset: ["start end", "end start"], 
-    // "start end" → when top of target hits bottom of viewport
-    // "end start" → when bottom of target hits top of viewport
+   
   });
 
-  // Animate based on scroll progress (0 → 1)
   const targetScale = useTransform(scrollYProgress, [0, 0.3], [0.3, 1]);
   const borderRadius = useTransform(scrollYProgress, [0, 0.3], ["100px", "0px"]);
 

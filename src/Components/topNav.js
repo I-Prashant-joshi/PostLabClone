@@ -16,7 +16,7 @@ function TopNav() {
   return (
     <div className="border-b border-[rgb(223,223,217)] z-0">
       {/* Top black bar */}
-      <div className="bg-black text-white h-[46px] w-full">
+      <div className="bg-black text-white h-[46px] w-full pl-5 pr-5">
         <motion.span
           initial={{ y: 10, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}

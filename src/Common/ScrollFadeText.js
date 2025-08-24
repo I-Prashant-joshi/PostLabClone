@@ -1,28 +1,30 @@
 "use client";
-import React from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useInView, useTransform, useScroll } from "framer-motion";
 
 export default function ScrollFadeText({
   text = "This is a scrolling text reveal",
-  start = 750,
-  end = 800,
   fromOpacity = 0.2,
   toOpacity = 1,
   className = "leading-[60px]"
 }) {
-  const { scrollY } = useScroll();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
 
   const words = text.split(" ");
 
   return (
-    <div
-      className={`${className}`}
-    >
+    <div ref={ref} className={`${className}`}>
       {words.map((word, i) => {
-        const delay = i * 38; // stagger each word’s scroll timing
+        // faster stagger: smaller multiplier
         const opacity = useTransform(
-          scrollY,
-          [start + delay, end + delay],
+          scrollYProgress,
+          [i * 0.02, i * 0.02 + 0.05], // faster word animation
           [fromOpacity, toOpacity]
         );
 
@@ -32,7 +34,7 @@ export default function ScrollFadeText({
             style={{ opacity }}
             className="inline-block"
           >
-            {word}&nbsp;
+            {isInView ? word : ""}&nbsp;
           </motion.span>
         );
       })}
