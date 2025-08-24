@@ -28,7 +28,7 @@ function AboutSection() {
   return (
     <div className=" relative z-40 bg-transparent">
       <div className="w-full flex justify-center items-center pt-[100px] pb-[0px] sm:pt-[400px] sm:pb-[150px] box-border z-50">
-        <div className="flex justify-center items-center w-full p-[40px]">
+        <div className="flex justify-center items-center w-full p-[20px] sm:p-[40px]">
           <div className="w-[300px] md:w-[554px] h-full text-[30px] md:text-[52px] flex justify-center items-center leading-tight">
             <ScrollFadeText
               text={aboutText}
