@@ -1,102 +1,95 @@
 "use client";
-import { motion, useAnimation, useScroll, useTransform } from "framer-motion";
-import { useEffect } from "react";
+import { motion, useAnimation, useScroll } from "framer-motion";
+import { useEffect, useState } from "react";
 import Image from "next/image";
+
+const cardBaseClasses =
+  "flex-1 h-[300px] sm:min-h-[385px] lg:h-[555px] bg-black rounded-[40px] flex flex-col justify-between shadow-xl p-[40px]";
+
+function Card({ icon, text, animate, initial, className = "" }) {
+  // Use motion.div only if animate is provided
+  const Tag = animate ? motion.div : "div";
+
+  return (
+    <Tag className={`${ cardBaseClasses} ${className}`} initial={initial} animate={animate}>
+      <Image src={icon} height={74} width={74} alt={text} />
+      <div className="w-full max-w-[331px] text-[25px] sm:text-[36px] text-white">{text}</div>
+    </Tag>
+  );
+}
 
 export default function CardDeck() {
   const { scrollY } = useScroll();
-  const controls = useAnimation();
-  const Rcontrols = useAnimation();
+  const leftControls = useAnimation();
+  const rightControls = useAnimation();
+
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   useEffect(() => {
+    const handleResize = () => setIsSmallScreen(window.innerWidth < 768);
+    handleResize(); 
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (isSmallScreen) return; 
+
     const unsubscribe = scrollY.on("change", (latest) => {
-      if (latest >= 50) {
-        // back to normal layout (real flex position)
-        controls.start({
-          left: "0%",
-          x: 0,
-          rotate: 0,
+      const animateCards = (left, right, rotateL, rotateR) => {
+        leftControls.start({
+          x: left,
+          rotate: rotateL,
           transition: { duration: 0.8, ease: "easeOut" },
         });
-        Rcontrols.start({
-        right: "0%",
-        x: 0,
-        rotate: 0,
-        transition: { duration: 0.8, ease: "easeOut" },
-      });
-      } else {
-        // overlap effect when above 50px scroll
-        controls.start({
-         x: "100%", rotate: -3, transition: { duration: 0.8, ease: "easeOut" },
+        rightControls.start({
+          x: right,
+          rotate: rotateR,
+          transition: { duration: 0.8, ease: "easeOut" },
         });
-        Rcontrols.start({
-        x: "-100%",
-        rotate: 3,
-        transition: { duration: 0.8, ease: "easeOut" },
-      });
+      };
+
+      if (latest >= 50) {
+        animateCards("0%", "0%", 0, 0);
+      } else {
+        animateCards("100%", "-100%", -3, 3);
       }
     });
 
     return () => unsubscribe();
-  }, [scrollY, controls, Rcontrols]);
+  }, [scrollY, leftControls, rightControls, isSmallScreen]);
+
+  const cards = [
+    {
+      text: "Empowering Creators.",
+      icon: "https://cdn.prod.website-files.com/681dfdff4444ca819f7050a2/68239a34145625a862ba3d54_icon-1.svg",
+      animate: isSmallScreen ? undefined : leftControls,
+      initial: { x: "100%", rotate: -3 },
+    },
+    {
+      text: "Transforming Publishing.",
+      icon: "https://cdn.prod.website-files.com/681dfdff4444ca819f7050a2/68239b7ac5ddc2008b2da9b7_icon-2.svg",
+      animate: undefined,
+    },
+    {
+      text: "Reclaiming Canadian Media.",
+      icon: "https://cdn.prod.website-files.com/681dfdff4444ca819f7050a2/68239b7ab5708009ef8f649e_icon-3.svg",
+      animate: isSmallScreen ? undefined : rightControls,
+      initial: { x: "-100%", rotate: 3 },
+    },
+  ];
 
   return (
-    
-        <div className="flex justify-center p-[40px] box-border z-0 bg-transparent">
-      <div className="pt-5 w-full h-[50vh] md:h-[40vh] sm:h-[40vh] lg:h-[40vh] xl:h-[60vh] flex justify-center gap-10 z-0 overflow-y-visible overflow-x-scroll no-scrollbar ">
-        {/* Left Card */}
-        <motion.div
-          className="flex-1 min-h-[350px] bg-black rounded-[40px] flex flex-col justify-between text-yellow-300 text-4xl font-bold shadow-xl p-[40px]"
-         initial={{ x: "100%", rotate: -3 }}    
-          animate={controls}
-        >
-          <div>
-            <Image
-              src="https://cdn.prod.website-files.com/681dfdff4444ca819f7050a2/68239a34145625a862ba3d54_icon-1.svg"
-              height={74}
-              width={74}
-            />
-          </div>
-          <div className="w-full max-w-[331px] text-[36px] text-[#ffff]">
-            Empowering Creators.
-          </div>
-        </motion.div>
-
-        {/* Center Card */}
-        <motion.div
-          className="flex-1 min-h-[350px] bg-black rounded-[40px] flex flex-col justify-between text-yellow-300 text-4xl font-bold shadow-xl p-[40px] z-10"
-        >
-          <div>
-            <Image
-              src="https://cdn.prod.website-files.com/681dfdff4444ca819f7050a2/68239b7ac5ddc2008b2da9b7_icon-2.svg"
-              height={74}
-              width={74}
-            />
-          </div>
-          <div className="w-full max-w-[331px] text-[36px] text-[#ffff]">
-            Transforming Publishing.
-          </div>
-        </motion.div>
-
-        {/* Right Card */}
-        <motion.div
-          className="flex-1 min-h-[350px] bg-black rounded-[40px] flex flex-col justify-between text-yellow-300 text-4xl font-bold shadow-xl p-[40px]"
-          initial={{ x: "-100%", rotate: 3 }}
-          animate={Rcontrols}
-        >
-          <div>
-            <Image
-              src="https://cdn.prod.website-files.com/681dfdff4444ca819f7050a2/68239b7ab5708009ef8f649e_icon-3.svg"
-              height={74}
-              width={74}
-            />
-          </div>
-         <div className="w-full max-w-[331px] text-[36px] text-[#ffff]">
-            Reclaiming Canadian Media.
-          </div>
-        </motion.div>
+    <div className="flex justify-center p-10 bg-transparent">
+      <div
+        className={`pt-5 w-full  flex gap-10 overflow-x-scroll no-scrollbar ${
+          isSmallScreen ? "flex-row" : "justify-center"
+        }`}
+      >
+        {cards.map((card, i) => (
+          <Card key={i} {...card} className={i === 1 && !isSmallScreen ? "z-10" : ""} />
+        ))}
       </div>
     </div>
-   
   );
 }
