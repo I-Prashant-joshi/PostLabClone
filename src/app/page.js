@@ -1,6 +1,6 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useState } from "react";
 
 import AboutSection from "@/Components/AboutSection";
 import BuildingSection from "@/Components/BuildingSection";
@@ -10,13 +10,13 @@ import Header from "@/Components/Header";
 export default function Home() {
   const { scrollY } = useScroll();
 
-  // Control visibility between 50px → 500px
-  const opacity = useTransform(scrollY, [50,200,4500], [0,1,0]);
+  const opacity = useTransform(scrollY, [50, 200, 4500], [0, 1, 0]);
+
+  const [active, setActive] = useState("About");
 
   return (
     <div className="relative">
-      {/* Main content */}
-      <div
+     <div
         className="relative z-20
         bg-[linear-gradient(to_right,transparent_0,transparent_10%,rgb(223,223,217)_10%,rgb(223,223,217)_calc(10%+1px),transparent_calc(10%+1px),transparent_44.2%,rgb(223,223,217)_45%,rgb(223,223,217)_calc(35%+1px),transparent_calc(35%+1px),transparent_90%,rgb(223,223,217)_91%,rgb(223,223,217)_calc(25%+1px),transparent_calc(20%+1px),transparent_20%)]
         
@@ -33,13 +33,34 @@ export default function Home() {
 
       <Footer />
 
-      {/* Sticky Bottom Nav */}
       <motion.div
         style={{ opacity }}
-        className="fixed bottom-6 left-1/2 -translate-x-1/2 px-8 py-4 bg-[#383636cb] text-white rounded-full shadow-lg flex gap-14 z-50"
+        className=" fixed bottom-6 left-1/2 -translate-x-1/2 px-1 py-1 bg-[#383636cb] rounded-full shadow-lg flex w-[220px] h-12 z-50"
       >
-        <button>About</button>
-        <button>Contact</button>
+        <motion.div
+          layout
+          className="absolute top-1 left-1 h-10 w-1/2 bg-white rounded-full"
+          initial={false}
+          animate={{ x: active === "About" ? 0 : 110 }}
+          transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        />
+
+        <button
+          onClick={() => setActive("About")}
+          className={`relative z-10 flex-1 text-center font-medium ${
+            active === "About" ? "text-black" : "text-white"
+          }`}
+        >
+          About
+        </button>
+        <button
+          onClick={() => setActive("Contact")}
+          className={`relative z-10 flex-1 text-center font-medium ${
+            active === "Contact" ? "text-black" : "text-white"
+          }`}
+        >
+          Contact
+        </button>
       </motion.div>
     </div>
   );
